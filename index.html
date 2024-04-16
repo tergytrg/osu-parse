@@ -1,22 +1,117 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>osu!parse</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-		<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		<div class="ulcontainer">
-			<ul>
-				<li><a href="index.html">Home</a></li>
-			</ul>
-		</div>
-		<div class="contentcontainer">
-			<div class="content">
-				<h1 style="font-size:5vmax">osu!parse</h1>
-				<p style = "font-size: 2vmax">Parse matches for tourney</p>
-			</div>
-		</div>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="color: #FF66AA;">osu!parse</title>
+    <style> /* This entire file has been converted pretty literally from my fxml application so it seems unlike html. */
+        body {
+            background-color: #221f2e;
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #content {
+            max-width: 960px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            background-color: #2e293d;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            resize: none;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #9470ff;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #5a32d1;
+        }
+
+        input[type="checkbox"] {
+            color: #DDDDDD;
+        }
+
+        #Logo {
+            fill: #FF66AA;
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        #Parse-button {
+            background-color: #FF66AA;
+        }
+
+        #Parse-button:hover {
+            background-color: #df2c7c;
+        }
+    </style>
+</head>
+<body>
+    <div id="content" style="display: grid; place-items: center; height: 540px; width: 960px;">
+        <div style="grid-column: 1 / span 2;">
+            <h1 id="Logo" style="color: #FF66AA;">osu!parse</h1>
+        </div>
+        <div style="grid-row: 2; display: flex; flex-direction: column; align-items: center;">
+            <label for="matchLinksArea">Match links:</label>
+            <textarea id="matchLinksArea" rows="5" cols="50" placeholder="https://osu.ppy.sh/community/matches/match_id"></textarea>
+            <button id="pathButton">Select output directory</button>
+        </div>
+        <div style="grid-row: 2 / span 2; grid-column: 2; display: flex; flex-direction: column; align-items: center;">
+            <label for="userListArea">[Optional] User whitelist:</label>
+            <textarea id="userListArea" rows="5" cols="50" placeholder="userId:username"></textarea>
+            <label for="mapPoolArea">[Optional] Mappool:</label>
+            <textarea id="mapPoolArea" rows="5" cols="50" placeholder="NM1:mapId"></textarea>
+            <button id="Parse-button">Parse!</button>
+        </div>
+        <div style="grid-row: 3; display: grid; grid-template-columns: auto auto; gap: 10px;">
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="scoreCheck" checked>
+                <label for="scoreCheck">Show Score</label>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="emptyColumnCheck">
+                <label for="emptyColumnCheck">Empty columns between maps</label>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="accCheck">
+                <label for="accCheck">Show Accuracy</label>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="scoreTypeCheck">
+                <label for="scoreTypeCheck">Show Scoring-type</label>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="modsCheck">
+                <label for="modsCheck">Show Mods</label>
+            </div>
+            <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="mapsOutsideOfPoolCheck" checked>
+                <label for="mapsOutsideOfPoolCheck">Show maps outside of mappool</label>
+            </div>
+        </div>
+        <div style="position: absolute; top: 20px; right: 20px;">
+            <button id="helpButton">Help</button>
+        </div>
+    </div>
+</body>
 </html>
