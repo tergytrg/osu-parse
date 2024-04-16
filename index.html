@@ -81,7 +81,7 @@
             <textarea id="userListArea" rows="5" cols="50" placeholder="userId:username"></textarea>
             <label for="mapPoolArea">[Optional] Mappool:</label>
             <textarea id="mapPoolArea" rows="5" cols="50" placeholder="NM1:mapId"></textarea>
-            <button id="Parse-button">Parse!</button>
+            <button id="Parse-button" onclick="onParse()">Parse!</button>
         </div>
         <div style="grid-row: 3; display: grid; grid-template-columns: auto auto; gap: 10px;">
             <div style="display: flex; align-items: center;">
@@ -110,8 +110,9 @@
             </div>
         </div>
         <div style="position: absolute; top: 20px; right: 20px;">
-            <button id="helpButton">Help</button>
+            <button id="helpButton" onclick="help()">Help</button>
         </div>
     </div>
+    <script src="parser_js/mainController.js"></script>
 </body>
 </html>
